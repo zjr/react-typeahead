@@ -40,7 +40,7 @@
   "peerDependencies": {
     "react": ">= 0.14"
   },
-  "main": "lib/react-typeahead.js",
+  "main": "src/react-typeahead.js",
   "devDependencies": {
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
