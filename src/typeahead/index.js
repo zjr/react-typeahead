@@ -34,6 +34,8 @@ var Typeahead = createReactClass({
     onKeyUp: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
     filterOption: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func
@@ -77,6 +79,8 @@ var Typeahead = createReactClass({
       onKeyUp: function(event) {},
       onFocus: function(event) {},
       onBlur: function(event) {},
+      onMouseEnter: function(event) {},
+      onMouseLeave: function(event) {},
       filterOption: null,
       searchOptions: null,
       inputDisplayOption: null,
@@ -330,7 +334,11 @@ var Typeahead = createReactClass({
 
     var InputElement = this.props.textarea ? 'textarea' : 'input';
     return (
-      <div className={classList}>
+      <div
+        className={classList}
+        onMouseEnter={this.props.onMouseEnter}
+        onMouseLeave={this.props.onMouseLeave}
+      >
         { this._renderHiddenInput() }
         <InputElement ref="entry" type="text"
           disabled={this.props.disabled}
